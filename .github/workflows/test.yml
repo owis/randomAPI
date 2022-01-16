@@ -2,13 +2,12 @@ name: Tests
 
 on:
   push:
-    branches:
+    branches: 
       - main
       - develop
       - 'feature/**'
-
   pull_request:
-    branches:
+    branches: 
       - main
       - develop
 
@@ -18,12 +17,11 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x]
-      steps:
-      - uses: action/checkout@v2
-      - name: User Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm test
-  
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm test
