@@ -1,0 +1,33 @@
+{
+  "name": "randomapi",
+  "version": "1.0.0",
+  "description": "ejercicio de API en nodejs para enviar devolver un numero random",
+  "main": "index.js",
+  "scripts": {
+    "strar": "node ./src/index.js",
+    "test": "jest --collectCoverage --silent --testPathPattern=/src/test/ --maxWorkers=1 --forceExit --passWithNoTests"
+  },
+  "jest": {
+    "verbose": true,
+    "roots": [
+      "<rootDir>/src/test"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owis/randomAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/owis/randomAPI/issues"
+  },
+  "homepage": "https://github.com/owis/randomAPI#readme",
+  "dependencies": {
+    "dotenv": "^12.0.4",
+    "express": "^4.17.2",
+    "jest": "^27.4.7",
+    "morgan": "^1.10.0"
+  }
+}
