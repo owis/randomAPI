@@ -3,27 +3,27 @@ name: Test
 on:
   push:
     branches:
-    - main
-    - develop
-    - 'feature/**'
+      - main
+      - develop
+      - 'feature/**'
 
   pull_request:
     branches:
-    - main
-    - develop
+      - main
+      - develop
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strate:
+    strategy:
       matrix:
         node-version: [12.x]
       steps:
-      - users: action/checkout@v2
-      - name: User Node.js ${{ matrix.node-version}}
+      - uses: action/checkout@v2
+      - name: User Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version}}
+          node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: npm test    
+      - run: npm test
   
