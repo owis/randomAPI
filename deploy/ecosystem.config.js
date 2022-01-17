@@ -5,7 +5,7 @@ module.exports = {
         instances: 3,
         watch: true,
         increment_var: 'PORT',
-        env:{
+        env: {
             'PORT': 5000,
         },
     ],
